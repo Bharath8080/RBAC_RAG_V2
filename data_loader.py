@@ -1,7 +1,8 @@
 from fastapi.security import api_key
 from langchain_community.document_loaders import DirectoryLoader, TextLoader, CSVLoader, UnstructuredMarkdownLoader
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+# from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 # from langchain_openai.embeddings import OpenAIEmbeddings
 # from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -15,7 +16,7 @@ FAISS_DIR = "vector_store"
 departments = ["finance", "hr", "marketing", "engineering", "general"]
 
 
-embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 # embedding = OpenAIEmbeddings(api_key= os.getenv("OPENAI_API_KEY"))
 # embedding = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001",api_key=os.getenv("GOOGLE_API_KEY"))
 
