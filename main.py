@@ -5,7 +5,7 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pydantic import BaseModel
 from typing import Dict 
 from pymongo import MongoClient
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -110,7 +110,7 @@ def chat_with_docs(query_data: Query, user=Depends(authenticate)):
     try:
         db = FAISS.load_local(
             folder_path=vector_store_path,
-            embeddings=HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"),
+            embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"),
             allow_dangerous_deserialization=True 
         )
         retriever = db.as_retriever()
