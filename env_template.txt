@@ -1,0 +1,9 @@
+# MongoDB Configuration
+MONGO_URI=mongodb://localhost:27017
+DB_NAME=finsolve_rbac
+
+# GROQ API Key for LLM
+GROQ_API_KEY=your_groq_api_key_here
+
+# FastAPI Backend URL (for Streamlit to connect to)
+FASTAPI_BACKEND_URL=http://localhost:8000 

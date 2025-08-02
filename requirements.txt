@@ -1,0 +1,20 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-groq
+sentence-transformers
+faiss-cpu
+pydantic
+streamlit
+requests
+unstructured
+langchain-huggingface
+langchain-google-genai
+markdown
+langchain-openai
+pandas
+pymongo
+# langchain-cohere
